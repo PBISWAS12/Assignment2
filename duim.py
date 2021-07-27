@@ -36,9 +36,9 @@ def parse_command_args():
 def percent_to_graph(percent, total_chars):
     "returns a string: eg. '##  ' for 50 if total_chars == 4"
     if 0 <= percent <= 100:
-            numbertoprint = int((percent/100) * total_chars)
-            numberofspaces = int(total_chars - numbertoprint)
-            return (("'" + "#" * numbertoprint) + (" " * numberofspaces) + "'")
+            printnumber = int((percent/100) * total_chars)
+            spacesnumber = int(total_chars - printnumber)
+            return (("'" + "#" * printnumber) + (" " * spacesnumber) + "'")
     else:
             print("Usage: Percentage value has to be between 0 and 100")
     
