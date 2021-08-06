@@ -63,5 +63,4 @@ def create_dir_dict(raw_dat):
 
 
 
-if __name__ == "__main__":
-    pass
+if __name__ args = sys.argv
