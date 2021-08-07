@@ -63,8 +63,8 @@ def create_dir_dict(raw_dat):
 
 
 def get_unit(n):
-    # corredponding unit is returned
-	factor = 1024
+      # corredponding unit is returned
+        factor = 1024
 	if n < factor:
 	        return 'B'
 	elif factor <= n < factor ** 2:
@@ -77,7 +77,7 @@ def get_unit(n):
 	        return 'TiB'
 
 def scale(n):
-	# output is scaled
+      # output is scaled
 	factor = 1024
 	scaled = n
 	while scaled > factor:
@@ -86,20 +86,20 @@ def scale(n):
 
 
 if __name__ == "__main__":
-   # user input is taken and gets directory size
-   args = sys.argv
-    if len(args) == 0:
-        directory = "."
-    elif len(args) > 1 or not os.path.isdir(args[0]):
-        print("ERROR: Invalid number of arguments or path is not valid.")
-        exit(0)
-    else:
-        directory = args[0]     
-    dir_dict = ceate_dir_dict(du_sub(directory))
-    total_size = get_total_size(dir_dict)
-    graph_max_size = 20
-    for subdir, size in dir_dict.items():
-        percentage = int(size / total_size * 100)
-        graph = percent_to_graph(percentage, graph_max_size)
-        print("{:>2} % [{}] {:0.1f} {:<5}\t{}".format(percentage, graph, auto_scale_n(size),get_unit(size) , subdir))
-        print("Total: {:0.1f} {}\t\t\t{}".format(auto_scale_n(total_size), get_unit(total_size), directory))
+      # user input is taken and gets directory size
+      args = sys.argv
+       if len(args) == 0:
+           directory = "."
+       elif len(args) > 1 or not os.path.isdir(args[0]):
+           print("ERROR: Invalid number of arguments or path is not valid.")
+           exit(0)
+       else:
+           directory = args[0]     
+       dir_dict = ceate_dir_dict(du_sub(directory))
+       total_size = get_total_size(dir_dict)
+       graph_max_size = 20
+       for subdir, size in dir_dict.items():
+           percentage = int(size / total_size * 100)
+           graph = percent_to_graph(percentage, graph_max_size)
+           print("{:>2} % [{}] {:0.1f} {:<5}\t{}".format(percentage, graph, auto_scale_n(size),get_unit(size) , subdir))
+           print("Total: {:0.1f} {}\t\t\t{}".format(auto_scale_n(total_size), get_unit(total_size), directory))
