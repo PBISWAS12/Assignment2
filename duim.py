@@ -18,7 +18,7 @@ with anyone or anything except for submission for grading.
 I understand that the Academic Honesty Policy will be enforced and 
 violators will be reported and appropriate action will be taken.
 
-Description: <Enter your documentation here>
+Description: Graph bar is shown as percentage for the space inside the drive after running this script.
 
 Date: 27th july 2021
 '''
@@ -77,8 +77,8 @@ def get_unit(n):
 	        return 'TiB'
 
 def scale(n):
-	# scales output to be just 3 digits long
-	factor = 1024 # change to 1024 if required
+	# output is scaled
+	factor = 1024
 	scaled = n
 	while scaled > factor:
 		scaled /= factor
@@ -86,7 +86,8 @@ def scale(n):
 
 
 if __name__ == "__main__":
-    args = sys.argv
+   # user input is taken and gets directory size
+   args = sys.argv
     if len(args) == 0:
         directory = "."
     elif len(args) > 1 or not os.path.isdir(args[0]):
